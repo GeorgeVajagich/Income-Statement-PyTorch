@@ -66,7 +66,13 @@ st. set_page_config(layout="wide")
 t=st.chat_input('Ticker')
 t=str(t)
 try:
+    fig = px.scatter(x=[1,2,3,4],y=[1,2,3,4])
+
+
     st.write(t)
     st.write(revenue(t))
+    st.write("median revenue growth")
+    st.write(mediangrowth(t))
+    st.plotly_chart(fig)
 except:
     pass
