@@ -4,6 +4,7 @@ import requests
 import streamlit as st
 import plotly # library for plotting
 import plotly.express as px # library for plotting
+pd.options.plotting.backend = "plotly"
 
 # getting key
 key=pd.read_csv(r"C:\Users\Geord\OneDrive\Desktop\Economics_Stuff\financeKey.txt",header=None)[0][0]
@@ -66,8 +67,13 @@ st. set_page_config(layout="wide")
 t=st.chat_input('Ticker')
 t=str(t)
 try:
-    fig = px.scatter(x=[1,2,3,4],y=[1,2,3,4])
 
+    df=(revenue(t))
+    print(df)
+    #df = df.set_index(pd.Index([2011,2012,2013,2014]))
+    print(df)
+    
+    fig=df.plot(title="Revenue History")
 
     st.write(t)
     st.write(revenue(t))
