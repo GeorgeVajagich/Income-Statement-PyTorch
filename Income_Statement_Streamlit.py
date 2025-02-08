@@ -68,10 +68,10 @@ t=st.chat_input('Ticker')
 t=str(t)
 try:
 
-    df=(revenue(t))
-    print(df)
-    #df = df.set_index(pd.Index([2011,2012,2013,2014]))
-    print(df)
+    rev=(revenue(t))
+
+    print(rev)
+    df = pd.DataFrame({rev[0],[2020,2021,2022,2023,2024]})
     
     fig=df.plot(title="Revenue History")
 
