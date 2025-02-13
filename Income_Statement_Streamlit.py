@@ -7,7 +7,7 @@ import plotly.express as px # library for plotting
 pd.options.plotting.backend = "plotly"
 
 # getting key
-key=${{ secrets.API_KEY }}
+key="${{ secrets.API_KEY }}"
 
 # extracting data from the internet as a json file
 ticker="AAPL"
